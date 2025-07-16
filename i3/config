@@ -1,0 +1,520 @@
+# i3wm Configuration File
+
+# General Settings
+# ----------------
+
+# Key Definitions
+# ----------------
+# $mod = Set below
+# Mod4 = Super key (Windows key)
+# Mod1 = ALT key
+# Control = CTRL key
+# Shift = SHIFT key
+# Escape = ESCAPE key
+# Return = ENTER or RETURN key
+# KP_Enter = Keypad Enter
+# Pause = PAUSE key
+# Print = PRINT key
+# Tab = TAB key
+
+# Set Variables
+# ----------------
+set $mod Mod4
+set $firstMonitor HDMI-2
+set $secondMonitor eDP-1
+
+# Appearance
+# ----------
+font pango:MesloLGS NF 10
+exec_always --no-startup-id env GTK_THEME=Gruvbox-Dark
+
+# Display and Monitor Configuration
+# ----------------------------------
+exec --no-startup-id xrandr --output eDP-1 --below HDMI-2 --auto
+
+# Workspace Configuration
+# -----------------------
+
+# Workspace Variables
+# ------------------------------
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+
+# Workspace Definitions and Assignment
+# ------------------------------------
+workspace 1 output $firstMonitor
+workspace 2 output $firstMonitor
+workspace 3 output $firstMonitor
+workspace 4 output $firstMonitor
+workspace 5 output $firstMonitor
+workspace 6 output $firstMonitor
+workspace 7 output $firstMonitor
+workspace 8 output $firstMonitor
+workspace 9 output $firstMonitor
+workspace 10 output $firstMonitor
+workspace 11 output $secondMonitor 
+workspace 12 output $secondMonitor
+workspace 13 output $secondMonitor
+workspace 14 output $secondMonitor
+workspace 15 output $secondMonitor
+workspace 16 output $secondMonitor
+workspace 17 output $secondMonitor
+workspace 18 output $secondMonitor
+workspace 19 output $secondMonitor
+workspace 20 output $secondMonitor
+
+# Workspace Navigation
+# --------------------
+
+# Switch to workspace
+# -------------------
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+mod2+KP_1 workspace $ws11
+bindsym $mod+mod2+KP_2 workspace $ws12
+bindsym $mod+mod2+KP_3 workspace $ws13
+bindsym $mod+mod2+KP_4 workspace $ws14
+bindsym $mod+mod2+KP_5 workspace $ws15
+bindsym $mod+mod2+KP_6 workspace $ws16
+bindsym $mod+mod2+KP_7 workspace $ws17
+bindsym $mod+mod2+KP_8 workspace $ws18
+bindsym $mod+mod2+KP_9 workspace $ws19
+bindsym $mod+mod2+KP_0 workspace $ws20
+
+# Move Focused Container to Workspace
+# -------------------------------------
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+KP_End move container to workspace $ws11; workspace $ws11
+bindsym $mod+Shift+KP_Down move container to workspace $ws12; workspace $ws12
+bindsym $mod+Shift+KP_Page_Down move container to workspace $ws13; workspace $ws13
+bindsym $mod+Shift+KP_Left move container to workspace $ws14; workspace $ws14
+bindsym $mod+Shift+KP_Begin move container to workspace $ws15; workspace $ws15
+bindsym $mod+Shift+KP_Right move container to workspace $ws16; workspace $ws16
+bindsym $mod+Shift+KP_Home move container to workspace $ws17; workspace $ws17
+bindsym $mod+Shift+KP_Up move container to workspace $ws18; workspace $ws18
+bindsym $mod+Shift+KP_Page_Up move container to workspace $ws19; workspace $ws19
+bindsym $mod+Shift+KP_Insert move container to workspace $ws20; workspace $ws20
+
+# Advanced Workspace Navigation
+# -----------------------------
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+bindsym Mod1+Ctrl+Right workspace next
+bindsym Mod1+Ctrl+Left workspace prev
+for_window [urgent=latest] focus
+
+# Application Management
+# ----------------------
+
+# Menu Launchers
+# --------------
+bindsym $mod+space exec --no-startup-id rofi -show drun -font "MesloLGS NF 10"
+bindsym $mod+slash exec --no-startup-id rofi -show window "MesloLGS NF 10"
+
+# Application Shortcuts
+# --------------------
+#bindsym $mod+l exec --no-startup-id /home/thinus/.local/share/LightBurn/LightBurn;focus
+bindsym $mod+F6 exec --no-startup-id vlc;focus
+bindsym $mod+equal exec --no-startup-id galculator
+bindsym $mod+z exec zathura
+
+# Take a Screenshot
+# ----------------
+bindsym $mod+Print exec --no-startup-id flameshot gui
+
+# Window Management
+# -----------------
+
+# Kill Window
+# -----------
+bindsym $mod+q kill
+
+# Change Focus
+# ------------
+
+# Vim Motions
+# -----------
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Cursor Keys
+# -------------
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Moving Focused Windows
+# ----------------------
+
+# Vim Motions
+# -----------
+#bindsym $mod+Shift+h move left
+#bindsym $mod+Shift+j move down
+#bindsym $mod+Shift+k move up
+#bindsym $mod+Shift+l move right
+
+# Alternatively - Cursor Keys
+# -----------------------------
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Window Layout
+# -------------
+
+# Split Windows Vertical
+# ----------------------
+bindsym $mod+v split v
+
+# Split Windows Horizontal
+# ----------------------
+#bindsym $mod+h split h
+
+# Toggle Full Screen
+# -----------------
+bindsym $mod+f fullscreen toggle
+
+# Focus Parent Container
+# ----------------------
+bindsym $mod+a focus parent
+
+# Window Resizing
+# ---------------
+
+# Resizing by 5px or 5ppt
+# -----------------------
+bindsym $mod+Mod1+Ctrl+Right resize shrink width 5 px or 5 ppt
+bindsym $mod+Mod1+Ctrl+Up resize grow height 5 px or 5 ppt
+bindsym $mod+Mod1+Ctrl+Down resize shrink height 5 px or 5 ppt
+bindsym $mod+Mod1+Ctrl+Left resize grow width 5 px or 5 ppt
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+floating_modifier $mod
+
+# System Control
+# --------------
+
+# Power Management
+# ----------------
+
+# Log out screen - Powermenu
+# -----------------------------
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
+
+# Sleep Mode
+# ----------
+bindsym $mod+Mod1t+s exec --no-startup-id systemctl suspend
+
+# Hibernation
+# -----------
+bindsym $mod+Mod1+h exec --no-startup-id systemctl hibernate
+
+# Autolock
+# --------
+exec xautolock -time 15 -locker "systemctl suspend"
+exec xautolock -killtime 20 -killer "systemctl hibernate"
+
+# Screensaver
+# -----------
+# Start a screensaver
+bindsym $mod+x exec --no-startup-id ~/scripts/cmatrix/cmatrix.sh
+# Kill the screensaver
+bindsym $mod+Shift+x exec --no-startup-id ~/scripts/cmatrix/kill-cmatrix.sh
+
+
+# Restart and Reload
+# ------------------
+
+# Restart i3
+# -----------
+bindsym $mod+Shift+r restart
+
+# Reload Configuration File
+# -------------------------
+bindsym $mod+Shift+c reload
+
+# Autostart Applications
+# ----------------------
+
+# Core Services
+# -------------
+# Autotiling
+exec_always --no-startup-id autotiling
+# Start Dunst
+exec --no-startup-id /usr/bin/dunst
+# Start Picom
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
+# Num Lock Activated
+exec_always --no-startup-id numlockx on
+# Authentication dialog
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Start Polybar
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id sh -c "sleep 2 && ~/.config/polybar/launch.sh"
+
+# Tray Applications
+# -----------------
+# bluetooth
+exec --no-startup-id blueberry-tray
+# network
+exec --no-startup-id nm-applet
+
+# Optional Services
+# -----------------
+# Start Dropbox
+exec --no-startup-id dropbox start -i
+# Restore Wallpaper
+exec --no-startup-id nitrogen --restore
+# Rotate wallpaper
+#exec_always --no-startup-id feh --randomize --bg-fill /home/thinus/Pictures/.wallpaper/wallpaper/vehicles/*
+# Betterlockscreen
+bindsym $mod+Shift+l exec betterlockscreen -l blur
+# Start Onedrive
+exec --no-startup-id onedrive --monitor
+
+# Program Management
+# ------------------
+
+# Brave Browser + ChatGPT PWA
+# ----------------------------
+
+# Workspace variable for main Brave browser
+#set $ws1 "1: Brave"
+
+# Assign main Brave browser windows to workspace 1
+for_window [class="Brave-browser" instance="brave"] move to workspace $ws1
+
+# Launch Brave with Mod+B
+bindsym $mod+b exec --no-startup-id brave
+
+# Libreoffice
+# ------------------------
+# Workspace 2 Libreoffice
+# Assign LibreOffice windows to workspace 2
+for_window [class="^libreoffice.*"] move to workspace $ws2
+for_window [class="libreoffice|libreoffice-startcenter"] focus
+
+# Inkscape
+# --------
+# Workspace 3 - Inkscape
+assign [class="Inkscape"] $ws3
+bindsym $mod+i exec --no-startup-id inkscape
+for_window [class="inkscape"] focus
+
+# Gimp
+# -----
+# Workspace 4 - Gimp
+assign [class="Gimp"] $ws4
+bindsym $mod+g exec --no-startup-id gimp
+for_window [class="Gimp"] focus
+
+# Thunderbird
+# -----------
+# Workspace 5 - Thunderbird
+assign [class="thunderbird"] $ws5
+bindsym $mod+m exec --no-startup-id thunderbird
+for_window [class="thunderbird"] focus
+
+# Workspace 6
+
+# Wezterm
+# -------
+# Workspace 7 - Wezterm
+bindsym $mod+Return exec --no-startup-id kitty
+for_window [class="kitty"] focus
+# Open WezTerm with Neovim and Telescope
+bindsym $mod+Shift+n exec --no-startup-id ~/scripts/nvim-fuzzy/nvim-fuzzy.sh
+bindsym $mod+n exec --no-startup-id ~/scripts/kitty-lf/kitty-lf.sh
+
+
+# Obdidian
+# --------
+# Workspace 8 - Obsidian
+assign [class="obsidian"] $ws8
+bindsym $mod+o exec --no-startup-id obsidian
+for_window [class="obsidian"] focus
+
+# VSCODE
+# -------
+# Workspace 9 - VSCODE
+assign [class="code-oss"] $ws9
+bindsym $mod+c exec --no-startup-id code
+for_window [class="code-oss"] focus
+
+# PyCharm
+# -------
+# Workspace 10 - PyCharm
+assign [class="jetbrains-pycharm-ce"] $ws10
+bindsym $mod+p exec --no-startup-id /home/thinus/.local/share/JetBrains/Toolbox/apps/pycharm-community/bin/pycharm.sh
+for_window [class="jetbrains-pycharm-ce"] focus
+bindsym $mod+Shift+p workspace $ws10
+
+# Thunar
+# ------
+# Workspace 11 - Thunar
+bindsym $mod+t exec --no-startup-id thunar
+assign [class="Thunar"] $ws11
+for_window [class="Thunar"] focus
+
+# Transmission
+# ------------
+# Workspace 12 - Transmission
+assign [class="transmission-gtk"] $ws12
+bindsym $mod+Shift+t exec --no-startup-id transmission-gtk
+for_window [class="transmission-gtk"] focus
+
+# Workspace 13
+
+# Workspace 14
+
+# Spotify
+# -------
+# Workspace 15 - Spotify
+assign [class="Spotify"] $ws15
+bindsym $mod+s exec --no-startup-id spotify
+for_window [class="Spotify"] focus
+# fix for spotify not moving to workspace 15
+for_window [class="Spotify"] move to workspace $ws15
+
+# Workspace 16
+
+# Workspace 17
+
+# Workspace 18
+
+# Whatsapp
+# --------
+# Workspace 19 - Whatsapp
+assign [class="whatsapp-nativefier-d40211"] $ws19
+for_window [class="whatsapp-nativefier-d40211"] focus
+
+# Telegram
+# --------
+# Workspace 20 - Telegram
+assign [class="TelegramDesktop"] $ws20
+for_window [class="TelegramDesktop"] focus
+
+# Window Behavior and Appearance
+# ------------------------------
+
+# Floating Window Rules
+# ---------------------
+for_window [class="Blueberry.py"] floating enable
+for_window [class="Galculator"] floating enable
+for_window [class="qt5ct|Lxappearance"] floating enable
+for_window [class="Nitrogen"] floating enable
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
+#for_window [window_role="pop-up"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [window_role="setup"] floating enable
+for_window [class="Bitwarden"] floating enable
+#for_window [title="kitty"] floating enable
+
+# Border Control
+# --------------
+
+# Set Border Style
+# ----------------
+default_border normal
+default_floating_border normal
+
+# Change Border Style
+# -------------------
+# bindsym $mod+t border normal
+bindsym $mod+y border pixel 1
+bindsym $mod+u border none
+
+# Popup Behavior
+# --------------
+
+# Popups During Fullscreen Mode
+# -----------------------------
+popup_during_fullscreen smart
+
+# Gaps and Theming
+# ----------------
+
+# i3 Gaps
+# -------
+for_window [class="^.*"] border pixel 1.5
+gaps inner 5
+gaps outer 5
+
+# Gruvbox Theme Colors
+# --------------------
+# Gruvbox Themed Window Color Settings
+# ------------------------------------
+#                       Border  Backgr  Text    Indicator
+client.focused          #98971a #98971a #98971a #98971a
+client.unfocused        #504945 #504945 #ebdbb2 #504945
+client.focused_inactive #665c54 #665c54 #8ec07c #665c54
+client.placeholder      #504945 #504945 #ebdbb2 #504945
+client.urgent           #cc241d #cc241d #ebdbb2 #cc241d
+client.background       #282828
+
+# Audio Control
+# -------------
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_down
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh volume_mute
+
+# Backlight Control
+# -----------------
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
+
+
+
+
+
+
+
+
+

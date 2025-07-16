@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#
+# Simple clean power menu using rofi
+
+# Define the options
+options=(
+  "Shutdown"
+  "Reboot"
+  "Suspend"
+  "Hibernate"
+  "Lock"
+  "Logout"
+  "Cancel"
+)
+
+# Show menu and capture the selection
+choice=$(printf "%s\n" "${options[@]}" | rofi -dmenu -p "Power Menu" -theme-str '
+window {
+    location: center;
+    anchor: center;
+    width: 250px;
+}
+listview {
+    lines: 7;
+    fixed-height: true;
+}
+element-text {
+    font: "JetBrainsMono Nerd Font 16";
+}
+')
+
+# Handle selection
+case "$choice" in
+  "Shutdown") systemctl poweroff ;;
+  "Reboot") systemctl reboot ;;
+  "Suspend") systemctl suspend ;;
+  "Hibernate") systemctl hibernate ;;
+  "Lock") ~/.config/i3/scripts/blur-lock ;;
+  "Logout") i3-msg exit ;;
+  "Cancel"|"") exit 0 ;;
+esac
+
