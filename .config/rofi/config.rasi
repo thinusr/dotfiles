@@ -1,0 +1,16 @@
+//@theme "/usr/share/rofi/themes/fancy.rasi"
+//@theme "nord"
+
+configuration {
+    font: "Roboto Condensed 16";
+}
+
+//@theme "/home/thinus/.config/rofi/themes/nord.rasi"
+
+//@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
+//@theme "/home/thinus/.config/rofi/themes/nord.rasi"
+
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+@theme "/home/thinus/.config/rofi/themes/gruvbox-med.rasi"

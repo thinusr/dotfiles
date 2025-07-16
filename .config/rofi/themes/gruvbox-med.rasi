@@ -1,0 +1,140 @@
+/**
+ * Gruvbox Dark Medium Rofi Theme
+ * Adapted by Thinus
+ *
+ * Gruvbox Color Palette
+ */
+
+configuration {
+    font: "Envy Code R 10";
+    width: 30;
+    line-margin: 10;
+    lines: 6;
+    columns: 2;
+
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+    show-icons:     true;
+}
+
+* {
+    gruvbox0: #282828;  /* Background */
+    gruvbox1: #3c3836;  /* Darker Background */
+    gruvbox2: #504945;  /* Even Darker Background */
+    gruvbox3: #665c54;  /* Dark Gray */
+
+    gruvbox4: #ebdbb2;  /* Foreground */
+    gruvbox5: #fbf1c7;  /* Light Foreground */
+    gruvbox6: #f9f5d7;  /* Light Background */
+
+    gruvbox7: #689d6a;  /* Aqua */
+    gruvbox8: #458588;  /* Blue */
+    gruvbox9: #d79921;  /* Yellow */
+    gruvbox10: #98971a; /* Green */
+    gruvbox11: #cc241d; /* Red */
+
+    gruvbox12: #d65d0e; /* Orange */
+    gruvbox13: #b16286; /* Purple */
+    gruvbox14: #8ec07c; /* Light Aqua */
+    gruvbox15: #928374; /* Light Gray */
+
+    foreground: @gruvbox4;
+    backlight: #ccffeedd;
+    background-color: transparent;
+
+    highlight: underline bold #ebdbb2;
+
+    transparent: rgba(40,40,40,0);
+}
+
+window {
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    padding: 10px;
+    border: 0px;
+    border-radius: 6px;
+
+    background-color: @transparent;
+    spacing: 0;
+    children: [mainbox];
+    orientation: horizontal;
+}
+
+mainbox {
+    spacing: 0;
+    children: [inputbar, message, listview];
+}
+
+message {
+    color: @gruvbox0;
+    padding: 5;
+    border-color: @foreground;
+    border: 0px 2px 2px 2px;
+    background-color: @gruvbox7;
+}
+
+inputbar {
+    color: @gruvbox6;
+    padding: 11px;
+    background-color: @gruvbox1;
+
+    border: 1px;
+    border-radius: 6px 6px 0px 0px;
+    border-color: @gruvbox8;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
+}
+
+prompt {
+    margin: 0px 0.3em 0em 0em;
+}
+
+listview {
+    padding: 8px;
+    border-radius: 0px 0px 6px 6px;
+    border-color: @gruvbox8;
+    border: 0px 1px 1px 1px;
+    background-color: rgba(40,40,40,0.9);
+    dynamic: false;
+}
+
+element {
+    padding: 3px;
+    vertical-align: 0.5;
+    border-radius: 4px;
+    background-color: transparent;
+    color: @foreground;
+    text-color: @gruvbox4;
+}
+
+element selected.normal {
+    background-color: @gruvbox7;
+    text-color: @gruvbox0;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+button {
+    padding: 6px;
+    color: @foreground;
+    horizontal-align: 0.5;
+
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    border-color: @foreground;
+}
+
+button selected.normal {
+    border: 2px 0px 2px 2px;
+    border-color: @foreground;
+}

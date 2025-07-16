@@ -1,0 +1,15 @@
+* {
+    background: #111111;
+    foreground: #bbbbbb;
+    selected-background: #bbbbbb;
+    selected-foreground: #111111;
+    border-color: #222222;
+    border: 2px;
+    padding: 20px;
+    font: "JetBrainsMono Nerd Font 16";
+}
+
+window {
+    location: center;
+    width: 20%;
+}
