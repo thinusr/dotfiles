@@ -1,7 +1,3 @@
-# customized dunst setup from EndeavourOS i3
-# https://github.com/endeavouros-team/endeavouros-i3wm-setup
-# See dunst(5) for all configuration options
-
 [global]
     ### Display ###
     monitor = 2
@@ -57,11 +53,7 @@
     min_icon_size = 0
     max_icon_size = 32
     icon_path = /home/thinus/.icons/Gruvbox-Dark/panel/16:/usr/share/icons/Qogir/...
-
-
-
-
-    
+  
     ### History ###
     sticky_history = false
     history_length = 0
@@ -87,14 +79,12 @@
 [experimental]
     per_monitor_dpi = false
 
-
 [urgency_low]
     background = "#3c3836"  # Gruvbox dark gray
     foreground = "#ebdbb2"  # Gruvbox light beige
     timeout = 5
     icon = /usr/share/icons/Qogir/16/status/package-installed-outdated.svg
     highlight = "#fabd2f"  # Gruvbox yellow (progress bar color)
-
 
 [urgency_normal]
     background = "#3c3836"
@@ -104,7 +94,6 @@
     icon = /usr/share/icons/Qogir/16/emblems/emblem-question.svg
     highlight = "#fe8019"  # Gruvbox orange
 
-
 [urgency_critical]
     background = "#3c3836"
     foreground = "#ebdbb2"
@@ -112,7 +101,6 @@
     timeout = 0
     highlight = "#cc241d"  # Gruvbox red
     icon = /usr/share/icons/Qogir/16/actions/dialog-warning.svg
-
 
 [stack-volumes]
     appname = "some_volume_notifiers"
