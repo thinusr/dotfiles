@@ -65,7 +65,9 @@ local cmp = require'cmp'
 local luasnip = require'luasnip'
 
 cmp.setup({
-    mapping = cmp.mapping.preset.insert(),
+    mapping = cmp.mapping.preset.insert({
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
     sources = {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
