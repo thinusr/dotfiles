@@ -45,7 +45,7 @@ alias reset='python3 /home/thinus/scripts/redbubble-automate/reset-posted.py'
 alias mirrors='sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
 alias logout='i3-msg exit'
 alias webapp='/home/thinus/scripts/create-webapp/create-webapp.sh'
-
+alias appdel='/home/thinus/scripts/create-webapp/delete-webapp.sh'
 # ----- Powerlevel10k Config -----
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
