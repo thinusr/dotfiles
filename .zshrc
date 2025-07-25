@@ -46,6 +46,8 @@ alias mirrors='sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirro
 alias logout='i3-msg exit'
 alias webapp='/home/thinus/scripts/create-webapp/create-webapp.sh'
 alias appdel='/home/thinus/scripts/create-webapp/delete-webapp.sh'
+alias dbstart='nohup dropbox start > /dev/null 2>&1 &'
+
 # ----- Powerlevel10k Config -----
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
