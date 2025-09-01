@@ -64,8 +64,6 @@ fi
 
 alsi --green
 
-
-
 # ----- Environment Variables -----
 export EDITOR=nvim
 export VISUAL=nvim
@@ -79,3 +77,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 
 
 export TERM=xterm-256color
+
+export PYTHONPATH="$HOME/python-lib:$PYTHONPATH"
+
