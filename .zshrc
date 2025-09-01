@@ -47,6 +47,10 @@ alias logout='i3-msg exit'
 alias webapp='/home/thinus/scripts/create-webapp/create-webapp.sh'
 alias appdel='/home/thinus/scripts/create-webapp/delete-webapp.sh'
 alias dbstart='nohup dropbox start > /dev/null 2>&1 &'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 # ----- Powerlevel10k Config -----
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
