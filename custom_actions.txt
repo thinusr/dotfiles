@@ -1,0 +1,27 @@
+Create a symbolic link
+Name: Create symlink
+Command: ln -Ts %f %n" (symlink)"
+File pattern: *
+Appears if selection contains: Directories, other files
+
+Use 'bulk rename' on a single file
+Name: Open in bulk renamer
+Description: Opens the bulk renamer for a single file
+Command: thunar --bulk-rename %f
+File pattern: *
+Appears if selection contains: any
+Range: 1-1
+
+Copy Current Path
+Command:
+echo -n %f | xclip -selection "clipboard"
+Description: Copies $PATH to clipboard.
+Requires:
+xclip program to be installed on your system
+
+Open Folder As Root
+Command:
+pkexec thunar %f
+Description: Opens current folder with root permissions.
+Requires:
+pkexec thunar %f
