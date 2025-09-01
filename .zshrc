@@ -7,7 +7,7 @@ fi
 # ----- Oh My Zsh Setup -----
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search history-substring-search fzf)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting web-search history-substring-search fzf)
 source $ZSH/oh-my-zsh.sh
 
 # ----- Plugin Configuration -----
@@ -17,40 +17,9 @@ fpath+=($HOME/.zsh/zsh-completions)
 export TERMINAL=kitty
 
 # ----- Aliases -----
-alias x='exit'
-alias c='clear'
-alias backup='sudo /home/thinus/scripts/backup/backup.sh'
-alias update='sudo pacman -Syyu'
-alias vim="nvim"
-alias tip='python ~/PycharmProjects/coding_projects/tip_calculator/tip_calculator.py'
-alias ollama='(ollama serve & docker-compose -f /home/thinus/docker_compose/docker-compose.yml up -d)'
-alias ls='lsd -a --color=auto --icon=always'
-alias home='cd ~'
-alias scale='xrandr --output HDMI-2 --scale 1.20x1.20'
-alias scaleup='xrandr --output HDMI-2 --scale 1.00x1.00'
-alias yay='yay --color=always'
-alias fo='code $(fzf)'
-alias pp='cd ~/PycharmProjects'
-alias push='git push'
-alias add='git add .'
-alias status='git status'
-alias emacs='emacs -nw'
-alias doom='emacs -nw'
-alias nani='nano'
-alias nanno='nano'
-alias nanni='nano'
-alias bubble='python3 /home/thinus/scripts/redbubble-automate/redbubble.py'
-alias xpost='~/.venvs/xposter/bin/python /home/thinus/scripts/redbubble-automate/x-post.py'
-alias reset='python3 /home/thinus/scripts/redbubble-automate/reset-posted.py'
-alias mirrors='sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
-alias logout='i3-msg exit'
-alias webapp='/home/thinus/scripts/create-webapp/create-webapp.sh'
-alias appdel='/home/thinus/scripts/create-webapp/delete-webapp.sh'
-alias dbstart='nohup dropbox start > /dev/null 2>&1 &'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
+ if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
 
 # ----- Powerlevel10k Config -----
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

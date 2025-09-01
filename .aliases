@@ -1,0 +1,123 @@
+# =====================
+# General / Convenience
+# =====================
+alias x='exit'
+alias c='clear'
+alias cls='clear'
+alias home='cd ~'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ..2='cd ../../'
+alias ..3='cd ../../../'
+alias ..4='cd ../../../../'
+
+# Quickly open recent directories in fzf
+alias cdlast='cd $(dirs -l | fzf)'
+
+# =====================
+# Package Management
+# =====================
+alias update='sudo pacman -Syu'
+alias update-full='sudo pacman -Syyu'
+alias yay='yay --color=always'
+alias mirrors='sudo reflector --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
+alias search='pacman -Ss'
+alias install='sudo pacman -S'
+alias remove='sudo pacman -Rns'
+
+# =====================
+# Text Editors
+# =====================
+alias vim='nvim'
+alias emacs='emacs -nw'
+alias doom='emacs -nw'
+alias nani='nano'
+alias nanno='nano'
+alias nanni='nano'
+
+# =====================
+# Git Shortcuts
+# =====================
+alias push='git push'
+alias add='git add .'
+alias status='git status'
+alias glog='git log --oneline --graph --decorate'
+alias gpull='git pull --rebase'
+alias gco='git checkout'
+alias gb='git branch'
+
+# =====================
+# Programming / Scripts
+# =====================
+alias tip='python ~/PycharmProjects/coding_projects/tip_calculator/tip_calculator.py'
+alias bubble='python3 /home/thinus/scripts/redbubble-automate/redbubble.py'
+alias xpost='~/.venvs/xposter/bin/python /home/thinus/scripts/redbubble-automate/x-post.py'
+alias reset='python3 /home/thinus/scripts/redbubble-automate/reset-posted.py'
+alias webapp='/home/thinus/scripts/create-webapp/create-webapp.sh'
+alias appdel='/home/thinus/scripts/create-webapp/delete-webapp.sh'
+alias backup='sudo /home/thinus/scripts/backup/backup.sh'
+alias ollama='(ollama serve & docker-compose -f /home/thinus/docker_compose/docker-compose.yml up -d)'
+alias fo='code $(fzf)'
+alias pp='cd ~/PycharmProjects'
+
+# =====================
+# Navigation / Projects
+# =====================
+alias cdd='cd ~/Downloads'
+alias cdp='cd ~/Documents'
+
+# =====================
+# Display / Monitor
+# =====================
+alias scale='xrandr --output HDMI-2 --scale 1.20x1.20'
+alias scaleup='xrandr --output HDMI-2 --scale 1.00x1.00'
+
+# =====================
+# Session / Window Management
+# =====================
+alias logout='i3-msg exit'
+alias dbstart='nohup dropbox start > /dev/null 2>&1 &'
+
+# =====================
+# File Listing
+# =====================
+alias ls='lsd -a --color=auto --icon=always'
+
+# =====================
+# Safer File Operations
+# =====================
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias mkdir='mkdir -pv'
+
+# =====================
+# System Info / Monitoring
+# =====================
+alias df='df -h'
+alias du='du -h -c'
+alias free='free -h'
+alias topcpu='ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head'
+alias uptime='uptime -p'
+
+# =====================
+# Networking
+# =====================
+alias myip='curl ifconfig.me'
+alias ports='sudo lsof -i -P -n'
+alias pingg='ping 8.8.8.8'
+
+# =====================
+# Misc / Quick Launch
+# =====================
+alias h='history | tail -n 20'
+alias weather='curl wttr.in'
+alias serve='python3 -m http.server'
+
+# =====================
+# View Alias List
+# =====================
+alias alias-list='bat --language=bash ~/.aliases'
+
