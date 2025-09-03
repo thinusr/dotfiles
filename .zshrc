@@ -1,3 +1,19 @@
+# ----- Random Logo (fixed randomness with .txt filtering) -----
+LOGO_DIR="$HOME/.config/alsi/logos"
+LOGO_LIST=("$LOGO_DIR"/*.txt(N))  # (N) = nullglob, ignores if empty
+LOGO_COUNT=${#LOGO_LIST[@]}
+
+if (( LOGO_COUNT > 0 )); then
+  RANDOM_INDEX=$((RANDOM % LOGO_COUNT))
+  RANDOM_LOGO="${LOGO_LIST[$RANDOM_INDEX]}"
+  cp -f "$RANDOM_LOGO" "$HOME/.config/alsi/alsi.logo"
+fi
+
+alsi --green
+
+setopt CORRECT_ALL
+
+
 # ----- Powerlevel10k Instant Prompt -----
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -24,18 +40,7 @@ fi
 # ----- Powerlevel10k Config -----
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# ----- Random Logo (fixed randomness with .txt filtering) -----
-LOGO_DIR="$HOME/.config/alsi/logos"
-LOGO_LIST=("$LOGO_DIR"/*.txt)  # Ensure we only pick .txt files
-LOGO_COUNT=${#LOGO_LIST[@]}
 
-if (( LOGO_COUNT > 0 )); then
-  RANDOM_INDEX=$((RANDOM % LOGO_COUNT))
-  RANDOM_LOGO="${LOGO_LIST[$RANDOM_INDEX]}"
-  cp "$RANDOM_LOGO" "$HOME/.config/alsi/alsi.logo"
-fi
-
-alsi --green
 
 # ----- Environment Variables -----
 export EDITOR=nvim
