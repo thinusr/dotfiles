@@ -322,14 +322,17 @@ exec --no-startup-id onedrive --monitor
 
 # Brave Browser + ChatGPT PWA
 # ----------------------------
-
-# Workspace variable for main Brave browser
-#set $ws1 "1: Brave"
+# Assign PWA's to various workspaces
+# HOT 102.7
+for_window [class="Brave-browser" instance="crx_cbiaclabojmfmpbifobeajoanekhngmd"] move to workspace $ws15
+# Udemy
+for_window [class="Brave-browser" instance="crx_jhjfilipgobilidojfjedfnkpmebkkee"] move to workspace $ws18
+#Whatsapp
+for_window [class="Brave-browser" instance="crx_hnpfjngllnobngcgfapefoaidbinmjnm"] move to workspace $ws19
 
 # Assign main Brave browser windows to workspace 1
+# Workspace variable for main Brave browser
 for_window [class="Brave-browser" instance="brave"] move to workspace $ws1
-
-# Launch Brave with Mod+B
 bindsym $mod+b exec --no-startup-id brave
 
 # Libreoffice
