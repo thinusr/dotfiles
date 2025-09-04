@@ -48,13 +48,15 @@ send_notification() {
 case "$1" in
     volume_up)
         wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
-        vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}')
+        vol_raw=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}')
+        vol=$(printf "%.0f" "$(echo "$vol_raw * 100" | bc -l)")
         icon=$(get_volume_icon)
         send_notification "$icon" "Volume ↑" "$vol"
         ;;
     volume_down)
         wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-        vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}')
+        vol_raw=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}')
+        vol=$(printf "%.0f" "$(echo "$vol_raw * 100" | bc -l)")
         icon=$(get_volume_icon)
         send_notification "$icon" "Volume ↓" "$vol"
         ;;
@@ -64,7 +66,8 @@ case "$1" in
             icon="$ICON_PATH_VOLUME/audio-volume-muted.svg"
             send_notification "$icon" "Volume" "Muted"
         else
-            vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}')
+            vol_raw=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}')
+            vol=$(printf "%.0f" "$(echo "$vol_raw * 100" | bc -l)")
             icon=$(get_volume_icon)
             send_notification "$icon" "Volume" "$vol"
         fi
