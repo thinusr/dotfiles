@@ -117,6 +117,21 @@ alias weather='curl wttr.in'
 alias serve='python3 -m http.server'
 
 # =====================
+# Adjust Dell Brightness
+# =====================
+# Dell monitor brightness 10%–100%
+alias dell10='ddcutil --display 1 setvcp 10 10 && notify-send "Dell Brightness" "10%"'
+alias dell20='ddcutil --display 1 setvcp 10 20 && notify-send "Dell Brightness" "20%"'
+alias dell30='ddcutil --display 1 setvcp 10 30 && notify-send "Dell Brightness" "30%"'
+alias dell40='ddcutil --display 1 setvcp 10 40 && notify-send "Dell Brightness" "40%"'
+alias dell50='ddcutil --display 1 setvcp 10 50 && notify-send "Dell Brightness" "50%"'
+alias dell60='ddcutil --display 1 setvcp 10 60 && notify-send "Dell Brightness" "60%"'
+alias dell70='ddcutil --display 1 setvcp 10 70 && notify-send "Dell Brightness" "70%"'
+alias dell80='ddcutil --display 1 setvcp 10 80 && notify-send "Dell Brightness" "80%"'
+alias dell90='ddcutil --display 1 setvcp 10 90 && notify-send "Dell Brightness" "90%"'
+alias dell100='ddcutil --display 1 setvcp 10 100 && notify-send "Dell Brightness" "100%"'
+
+# =====================
 # View Alias List
 # =====================
 alias alias-list='bat --language=bash ~/.aliases'
