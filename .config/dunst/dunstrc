@@ -28,7 +28,7 @@
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#fe8019"  # Gruvbox blue-gray
+    frame_color = "#88C0D0"  # Nord Frost cyan
     gap_size = 0
     separator_color = auto
     sort = yes
@@ -52,8 +52,8 @@
     icon_position = left
     min_icon_size = 0
     max_icon_size = 32
-    icon_path = /home/thinus/.icons/Gruvbox-Dark/panel/16:/usr/share/icons/Qogir/...
-  
+    icon_path = /home/thinus/.icons/Papirus-Dark:/usr/share/icons/Papirus-Dark/...
+
     ### History ###
     sticky_history = false
     history_length = 0
@@ -80,28 +80,29 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#3c3836"  # Gruvbox dark gray
-    foreground = "#ebdbb2"  # Gruvbox light beige
+    background = "#3B4252"  # Nord dark
+    foreground = "#D8DEE9"  # Nord light
     timeout = 5
-    icon = /usr/share/icons/Qogir/16/status/package-installed-outdated.svg
-    highlight = "#fabd2f"  # Gruvbox yellow (progress bar color)
+    icon = /usr/share/icons/Papirus-Dark/16/status/package-installed-outdated.svg
+    highlight = "#81A1C1"   # Nord Frost blue
 
 [urgency_normal]
-    background = "#3c3836"
-    foreground = "#ebdbb2"
+    background = "#3B4252"
+    foreground = "#D8DEE9"
     timeout = 5
     override_pause_level = 30
-    icon = /usr/share/icons/Qogir/16/emblems/emblem-question.svg
-    highlight = "#fe8019"  # Gruvbox orange
+    icon = /usr/share/icons/Papirus-Dark/16/emblems/emblem-question.svg
+    highlight = "#5E81AC"   # Nord Frost deeper blue
 
 [urgency_critical]
-    background = "#3c3836"
-    foreground = "#ebdbb2"
-    frame_color = "#cc241d"
+    background = "#3B4252"
+    foreground = "#D8DEE9"
+    frame_color = "#BF616A"  # Nord Aurora red
     timeout = 0
-    highlight = "#cc241d"  # Gruvbox red
-    icon = /usr/share/icons/Qogir/16/actions/dialog-warning.svg
+    highlight = "#BF616A"
+    icon = /usr/share/icons/Papirus-Dark/16/actions/dialog-warning.svg
 
 [stack-volumes]
     appname = "some_volume_notifiers"
     set_stack_tag = "volume"
+
