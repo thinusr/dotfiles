@@ -495,12 +495,25 @@ gaps outer 5
 # Gruvbox Themed Window Color Settings
 # ------------------------------------
 #                       Border  Backgr  Text    Indicator
-client.focused          #98971a #98971a #98971a #98971a
-client.unfocused        #504945 #504945 #ebdbb2 #504945
-client.focused_inactive #665c54 #665c54 #8ec07c #665c54
-client.placeholder      #504945 #504945 #ebdbb2 #504945
-client.urgent           #cc241d #cc241d #ebdbb2 #cc241d
-client.background       #282828
+#client.focused          #98971a #98971a #98971a #98971a
+#client.unfocused        #504945 #504945 #ebdbb2 #504945
+#client.focused_inactive #665c54 #665c54 #8ec07c #665c54
+#client.placeholder      #504945 #504945 #ebdbb2 #504945
+#client.urgent           #cc241d #cc241d #ebdbb2 #cc241d
+#client.background       #282828
+
+# Nord Theme Colors
+# -----------------
+# Nord Themed Window Color Settings
+# ---------------------------------
+#                       Border   Backgr   Text     Indicator
+client.focused          #88C0D0  #88C0D0  #2E3440  #88C0D0
+client.unfocused        #4C566A  #4C566A  #D8DEE9  #4C566A
+client.focused_inactive #434C5E  #434C5E  #81A1C1  #434C5E
+client.placeholder      #3B4252  #3B4252  #D8DEE9  #3B4252
+client.urgent           #BF616A  #BF616A  #ECEFF4  #BF616A
+client.background       #2E3440
+
 
 # Audio Control
 # -------------

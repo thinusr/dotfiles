@@ -13,4 +13,6 @@ configuration {
 
 //@theme "/usr/share/rofi/themes/DarkBlue.rasi"
 
-@theme "/home/thinus/.config/rofi/themes/gruvbox-med.rasi"
+//@theme "/home/thinus/.config/rofi/themes/gruvbox-med.rasi"
+
+@theme "/home/thinus/.config/rofi/themes/nord.rasi"
