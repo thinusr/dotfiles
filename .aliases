@@ -101,6 +101,7 @@ alias du='du -h -c'
 alias free='free -h'
 alias topcpu='ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head'
 alias uptime='uptime -p'
+alias disks='duf -all'
 
 # =====================
 # Networking
