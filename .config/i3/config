@@ -359,9 +359,9 @@ for_window [class="Gimp"] focus
 # Thunderbird
 # -----------
 # Workspace 5 - Thunderbird
-assign [class="thunderbird"] $ws5
-bindsym $mod+m exec --no-startup-id thunderbird
-for_window [class="thunderbird"] focus
+assign [class="eu.betterbird.Betterbird"] $ws5
+bindsym $mod+m exec --no-startup-id betterbird
+for_window [class="eu.betterbird.Betterbird"] focus
 
 # Workspace 6
 
