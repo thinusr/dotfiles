@@ -316,6 +316,8 @@ exec --no-startup-id nitrogen --restore
 bindsym $mod+Shift+l exec betterlockscreen -l blur
 # Start Onedrive
 exec --no-startup-id onedrive --monitor
+# Start pcloud
+exec --no-startup-id /home/thinus/applications/pcloud
 
 # Program Management
 # ------------------
@@ -486,7 +488,7 @@ popup_during_fullscreen smart
 
 # i3 Gaps
 # -------
-for_window [class="^.*"] border pixel 1.5
+for_window [class="^.*"] border pixel 2.5
 gaps inner 5
 gaps outer 5
 
