@@ -66,7 +66,8 @@ alias pp='cd ~/PycharmProjects'
 # Navigation / Projects
 # =====================
 alias cdd='cd ~/Downloads'
-alias cdp='cd ~/Documents'
+alias cdp='cd ~/Documents'i
+alias pcloud='cd ~/pCloudDrive'
 
 # =====================
 # Display / Monitor
