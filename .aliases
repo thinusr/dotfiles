@@ -84,7 +84,7 @@ alias dbstart='nohup dropbox start > /dev/null 2>&1 &'
 # =====================
 # File Listing
 # =====================
-alias ls='lsd -a --color=auto --icon=always'
+alias ls='lsd -lah --color=auto --icon=always'
 
 # =====================
 # Safer File Operations
