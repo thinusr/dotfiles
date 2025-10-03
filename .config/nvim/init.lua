@@ -31,6 +31,7 @@ require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim' -- Git signs in the editor
     use 'nvim-neotest/nvim-nio'   -- Required for nvim-dap-ui
     use 'windwp/nvim-autopairs'   -- Auto brackets & quotes
+    use 'shaunsingh/nord.nvim'    -- Nord color scheme
     use {
       "NvChad/nvim-colorizer.lua",
       config = function()
@@ -81,7 +82,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- Apply Gruvbox color scheme
-vim.cmd [[colorscheme gruvbox]]
+vim.cmd [[colorscheme nord]]
 
 -- Improve LSP diagnostics
 vim.diagnostic.config({
@@ -135,7 +136,7 @@ vim.cmd [[autocmd BufWritePre *.py lua vim.lsp.buf.format()]]
 
 -- Configure Lualine (status bar)
 require('lualine').setup {
-    options = { theme = 'gruvbox' }
+    options = { theme = 'nord' }
 }
 
 -- Set up Git signs
