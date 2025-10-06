@@ -35,7 +35,7 @@ case "$choice" in
   "Reboot") systemctl reboot ;;
   "Suspend") systemctl suspend ;;
   "Hibernate") systemctl hibernate ;;
-  "Lock") ~/.config/i3/scripts/blur-lock ;;
+  "Lock") /home/thinus/.config/i3/scripts/lock.sh ;;
   "Logout") i3-msg exit ;;
   "Cancel"|"") exit 0 ;;
 esac
