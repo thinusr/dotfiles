@@ -254,10 +254,9 @@ bindsym $mod+Mod1t+s exec --no-startup-id systemctl suspend
 # -----------
 bindsym $mod+Mod1+h exec --no-startup-id systemctl hibernate
 
-# Autolock
-# --------
-exec xautolock -time 15 -locker "systemctl suspend"
-exec xautolock -killtime 20 -killer "systemctl hibernate"
+# Lock Screen
+#------------
+bindsym $mod+Shift+l exec --no-startup-id ~/.config/i3/scripts/lock.sh
 
 # Screensaver
 # -----------
@@ -296,6 +295,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Start Polybar
 #exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id sh -c "sleep 2 && ~/.config/polybar/launch.sh"
+# Start xscreensaver
+exec_always --no-startup-id xscreensaver -nosplash
 
 # Tray Applications
 # -----------------
@@ -312,8 +313,7 @@ exec --no-startup-id dropbox start -i
 exec --no-startup-id nitrogen --restore
 # Rotate wallpaper
 #exec_always --no-startup-id feh --randomize --bg-fill /home/thinus/Pictures/.wallpaper/wallpaper/vehicles/*
-# Betterlockscreen
-bindsym $mod+Shift+l exec betterlockscreen -l blur
+
 # Start Onedrive
 exec --no-startup-id onedrive --monitor
 # Start pcloud
