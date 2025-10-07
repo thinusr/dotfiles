@@ -153,6 +153,7 @@ bindsym $mod+slash exec --no-startup-id rofi -show window "MesloLGS NF 10"
 bindsym $mod+F6 exec --no-startup-id vlc;focus
 bindsym $mod+equal exec --no-startup-id galculator
 bindsym $mod+z exec zathura
+bindsym $mod+r exec --no-startup-id kitty -e ranger
 
 # Take a Screenshot
 # ----------------
@@ -374,9 +375,7 @@ bindsym $mod+Return exec --no-startup-id kitty
 for_window [class="kitty"] focus
 # Open WezTerm with Neovim and Telescope
 bindsym $mod+Shift+n exec --no-startup-id ~/scripts/nvim-fuzzy/nvim-fuzzy.sh
-bindsym $mod+n exec --no-startup-id ~/scripts/kitty-lf/kitty-lf.sh
-
-
+bindsym $mod+n exec --no-startup-id kitty nvim
 # Obdidian
 # --------
 # Workspace 8 - Obsidian
