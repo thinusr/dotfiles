@@ -257,7 +257,10 @@ bindsym $mod+Mod1+h exec --no-startup-id systemctl hibernate
 
 # Lock Screen
 #------------
-bindsym $mod+Shift+l exec --no-startup-id ~/.config/i3/scripts/lock.sh
+#bindsym $mod+Shift+l exec --no-startup-id ~/.config/i3/scripts/lock.sh
+bindsym $mod+Shift+l exec --no-startup-id /usr/bin/i3lock-fancy-multimonitor -b=0x8
+# Lock after 10 minutes of inactivity using i3lock-fancy
+exec --no-startup-id xautolock -time 10 -locker "/usr/bin/i3lock-fancy-multimonitor -b=0x8"
 
 # Screensaver
 # -----------
