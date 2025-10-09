@@ -35,7 +35,7 @@ case "$choice" in
   "Reboot") systemctl reboot ;;
   "Suspend") systemctl suspend ;;
   "Hibernate") systemctl hibernate ;;
-  "Lock") /home/thinus/.config/i3/scripts/lock.sh ;;
+  "Lock") /usr/bin/i3lock-fancy-multimonitor -b=0x8 ;;
   "Logout") i3-msg exit ;;
   "Cancel"|"") exit 0 ;;
 esac
