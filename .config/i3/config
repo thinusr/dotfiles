@@ -146,6 +146,10 @@ for_window [urgent=latest] focus
 # --------------
 bindsym $mod+space exec --no-startup-id rofi -show drun -font "MesloLGS NF 10"
 bindsym $mod+slash exec --no-startup-id rofi -show window "MesloLGS NF 10"
+bindsym Control+Shift+a exec --no-startup-id ~/scripts/launchers/ai-launcher.sh
+bindsym Control+Shift+m exec --no-startup-id ~/scripts/launchers/music-launcher.sh
+bindsym Control+Shift+e exec --no-startup-id ~/scripts/launchers/edu-launcher.sh
+bindsym Control+Shift+s exec --no-startup-id ~/scripts/launchers/social-launcher.sh
 
 # Application Shortcuts
 # --------------------
@@ -249,7 +253,7 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.config/i3/scripts/powermenu
 
 # Sleep Mode
 # ----------
-bindsym $mod+Mod1t+s exec --no-startup-id systemctl suspend
+bindsym $mod+Mod1+s exec --no-startup-id systemctl suspend
 
 # Hibernation
 # -----------
@@ -330,7 +334,9 @@ exec --no-startup-id /home/thinus/applications/pcloud
 # ----------------------------
 # Assign PWA's to various workspaces
 # HOT 102.7
-for_window [class="Brave-browser" instance="crx_cbiaclabojmfmpbifobeajoanekhngmd"] move to workspace $ws15
+for_window [class="Brave-browser" instance="crx_nfccndagigflmpopcnckebdjdnlffclg"] move to workspace $ws15
+# Spotify
+for_window [class="Brave-browser" instance="crx_pjibgclleladliembfgfagdaldikeohf"] move to workspace $ws15
 # Udemy
 for_window [class="Brave-browser" instance="crx_jhjfilipgobilidojfjedfnkpmebkkee"] move to workspace $ws18
 #Whatsapp
@@ -531,6 +537,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_bri
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+
 
 
 
