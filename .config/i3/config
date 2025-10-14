@@ -323,7 +323,7 @@ exec --no-startup-id nitrogen --restore
 #exec_always --no-startup-id feh --randomize --bg-fill /home/thinus/Pictures/.wallpaper/wallpaper/vehicles/*
 
 # Start Onedrive
-exec --no-startup-id onedrive --monitor
+# exec --no-startup-id onedrive --monitor
 # Start pcloud
 exec --no-startup-id /home/thinus/applications/pcloud
 
@@ -537,13 +537,3 @@ bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_bri
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-
-
-
-
-
-
-
-
-
