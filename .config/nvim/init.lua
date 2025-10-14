@@ -25,6 +25,7 @@ vim.g.loaded_ruby_provider = 0
 
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.autochdir = true
 
 -- Transparent background
 vim.cmd [[
