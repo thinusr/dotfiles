@@ -15,6 +15,7 @@
 # --------------
 #
 set $mod Mod4
+set $alt Mod1
 set $firstmonitor HDMI-2
 set $secondmonitor eDP-1
 #
