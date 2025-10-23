@@ -115,7 +115,7 @@ alias pingg='ping 8.8.8.8'
 # Misc / Quick Launch
 # =====================
 alias h='history | tail -n 20'
-alias weather='curl wttr.in'
+alias weather='curl wttr.in/Centurion'
 alias serve='python3 -m http.server'
 
 # =====================
