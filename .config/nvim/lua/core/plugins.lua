@@ -40,6 +40,7 @@ require('packer').startup(function(use)
 
     -- File Explorer
     use 'nvim-tree/nvim-tree.lua'
+    use 'nvim-web-devicons'
 
     -- Debugging
     use 'mfussenegger/nvim-dap'
