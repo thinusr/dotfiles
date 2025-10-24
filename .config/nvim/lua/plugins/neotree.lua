@@ -1,8 +1,27 @@
+-- ========================================================
+-- PLUGINS.NEOTREE.LUA - File Explorer Setup (NvimTree)
+-- ========================================================
+
+local tree = require("nvim-tree")
+
 -- -----------------------------
--- File Explorer (NvimTree)
+-- Setup
 -- -----------------------------
-require'nvim-tree'.setup {
-    view = { side = "left", width = 30 },
-    actions = { open_file = { window_picker = { enable = false } } },
-}
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {})
+tree.setup({
+  view = {
+    side = "left",
+    width = 30,
+  },
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false,
+      },
+    },
+  },
+})
+
+-- -----------------------------
+-- Keymap
+-- -----------------------------
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })

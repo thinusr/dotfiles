@@ -1,7 +1,13 @@
--- -----------------------------
--- Treesitter
--- -----------------------------
-require('nvim-treesitter.configs').setup {
+-- ========================================================
+-- PLUGINS.TREESITTER.LUA - Syntax & Structure Setup
+-- ========================================================
+
+local treesitter = require("nvim-treesitter.configs")
+
+treesitter.setup({
+  -- -----------------------------
+  -- Language Parsers
+  -- -----------------------------
   ensure_installed = {
     "bash",
     "lua",
@@ -14,16 +20,27 @@ require('nvim-treesitter.configs').setup {
     "css",
     "javascript",
     "typescript",
-    -- "vim",  -- optional: remove to avoid errors
+    -- "vim", -- optional: disable to avoid parser errors
   },
+
+  -- -----------------------------
+  -- Features
+  -- -----------------------------
   highlight = {
     enable = true,
-    disable = { "vim" },  -- disables Vim parser to prevent errors
+    disable = { "vim" }, -- disables Vim parser to prevent errors
     additional_vim_regex_highlighting = false,
   },
-  indent = { enable = true },
-  incremental_selection = { enable = true },
-  playground = { enable = true },
-}
 
+  indent = {
+    enable = true,
+  },
 
+  incremental_selection = {
+    enable = true,
+  },
+
+  playground = {
+    enable = true,
+  },
+})
