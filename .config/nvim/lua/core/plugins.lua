@@ -1,3 +1,4 @@
+
 -- -----------------------------
 -- Plugin Management
 -- -----------------------------
@@ -39,8 +40,15 @@ require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim'
 
     -- File Explorer
-    use 'nvim-tree/nvim-tree.lua'
-    use 'nvim-web-devicons'
+    use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- already included
+  },
+  config = function()
+    require('nvim-tree').setup {}
+  end
+}
 
     -- Debugging
     use 'mfussenegger/nvim-dap'
