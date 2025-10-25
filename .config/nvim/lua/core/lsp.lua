@@ -44,12 +44,11 @@ vim.diagnostic.config({
 -- -----------------------------
 -- Mason Setup
 -- -----------------------------
-require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "pyright",
-    "tsserver",
+    "typescript-language-server", -- ✅ Correct
     "bashls",
     "jsonls",
     "html",
