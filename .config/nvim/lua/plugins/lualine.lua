@@ -1,24 +1,28 @@
-
 local colors = {
-  red = '#bf616a',
-  grey = '#4c566a',
-  black = '#2e3440',
-  white = '#d8dee9',
-  light_green = '#8fbcbb',
-  orange = '#d08770',
-  green = '#a3be8c',
+  red         = '#BF616A',
+  orange      = '#D08770',
+  yellow      = '#EBCB8B',
+  green       = '#A3BE8C',
+  aqua        = '#8FBCBB',
+  blue        = '#81A1C1',
+  deep_blue   = '#5E81AC',
+  purple      = '#B48EAD',
+  bg_dark     = '#2E3440',
+  bg_light    = '#3B4252',
+  fg_light    = '#D8DEE9',
+  fg_lighter  = '#ECEFF4',
 }
 
 local theme = {
   normal = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.white },
-    z = { fg = colors.white, bg = colors.black },
+    a = { fg = colors.fg_lighter, bg = colors.bg_dark },
+    b = { fg = colors.fg_lighter, bg = colors.bg_light },
+    c = { fg = colors.bg_dark, bg = colors.fg_light },
+    z = { fg = colors.fg_lighter, bg = colors.bg_dark },
   },
-  insert = { a = { fg = colors.black, bg = colors.light_green } },
-  visual = { a = { fg = colors.black, bg = colors.orange } },
-  replace = { a = { fg = colors.black, bg = colors.green } },
+  insert  = { a = { fg = colors.bg_dark, bg = colors.green } },
+  visual  = { a = { fg = colors.bg_dark, bg = colors.orange } },
+  replace = { a = { fg = colors.bg_dark, bg = colors.red } },
 }
 
 local empty = require('lualine.component'):extend()
@@ -30,12 +34,11 @@ function empty:draw(default_highlight)
   return self.status
 end
 
--- Put proper separators and gaps between components in sections
 local function process_sections(sections)
   for name, section in pairs(sections) do
     local left = name:sub(9, 10) < 'x'
     for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
-      table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = colors.white } })
+      table.insert(section, pos * 2, { empty, color = { fg = colors.fg_lighter, bg = colors.fg_lighter } })
     end
     for id, comp in ipairs(section) do
       if type(comp) ~= 'table' then
@@ -49,23 +52,16 @@ local function process_sections(sections)
 end
 
 local function search_result()
-  if vim.v.hlsearch == 0 then
-    return ''
-  end
+  if vim.v.hlsearch == 0 then return '' end
   local last_search = vim.fn.getreg('/')
-  if not last_search or last_search == '' then
-    return ''
-  end
+  if not last_search or last_search == '' then return '' end
   local searchcount = vim.fn.searchcount { maxcount = 9999 }
   return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
 end
 
 local function modified()
-  if vim.bo.modified then
-    return '+'
-  elseif vim.bo.modifiable == false or vim.bo.readonly == true then
-    return '-'
-  end
+  if vim.bo.modified then return '+' end
+  if not vim.bo.modifiable or vim.bo.readonly then return '-' end
   return ''
 end
 
@@ -84,39 +80,30 @@ require('lualine').setup {
         'diagnostics',
         source = { 'nvim' },
         sections = { 'error' },
-        diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
+        diagnostics_color = { error = { bg = colors.red, fg = colors.fg_lighter } },
       },
       {
         'diagnostics',
         source = { 'nvim' },
         sections = { 'warn' },
-        diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
+        diagnostics_color = { warn = { bg = colors.orange, fg = colors.fg_lighter } },
       },
-      { 'filename', file_status = false, path = 1 },
+      { 'filename', path = 2 },
       { modified, color = { bg = colors.red } },
-      {
-        '%w',
-        cond = function()
-          return vim.wo.previewwindow
-        end,
-      },
-      {
-        '%r',
-        cond = function()
-          return vim.bo.readonly
-        end,
-      },
-      {
-        '%q',
-        cond = function()
-          return vim.bo.buftype == 'quickfix'
-        end,
-      },
+      { '%w', cond = function() return vim.wo.previewwindow end },
+      { '%r', cond = function() return vim.bo.readonly end },
+      { '%q', cond = function() return vim.bo.buftype == 'quickfix' end },
     },
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { search_result, 'filetype' },
-    lualine_z = { '%l:%c', '%p%%/%L' },
+    lualine_y = {
+  search_result,
+  { 'encoding', color = { fg = colors.purple, gui = 'bold' } },
+  { 'fileformat', color = { fg = colors.orange, gui = 'bold' } },
+  'filetype',
+},
+
+    lualine_z = { '%l:%c', '%p%%/%L', function() return os.date("%H:%M") end },
   },
   inactive_sections = {
     lualine_c = { '%f %y %m' },
