@@ -56,7 +56,7 @@ require("plugins.ibl")
 -- -----------------------------
 -- 6. LSP & Autocompletion
 -- -----------------------------
-require("core.lsp") -- Mason, LSP servers, cmp
+require("vim.lsp") -- Mason, LSP servers, cmp
 
 -- -----------------------------
 -- 7. Colorscheme
