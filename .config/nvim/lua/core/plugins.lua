@@ -39,23 +39,32 @@ return require("packer").startup(function(use)
   use("nvim-lualine/lualine.nvim")
 
   use({
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({ "*" }, {
-        names = true,
-        RGB = true,
-        RRGGBB = true,
-        RRGGBBAA = true,
-        rgb_fn = true,
-        hsl_fn = true,
-        css = true,
-        css_fn = true,
-        mode = "background",
-      })
-    end,
-  })
+  "norcalli/nvim-colorizer.lua",
+  config = function()
+    require("colorizer").setup({ "*" }, {
+      names = true,
+      RGB = true,
+      RRGGBB = true,
+      RRGGBBAA = true,
+      rgb_fn = true,
+      hsl_fn = true,
+      css = true,
+      css_fn = true,
+      mode = "background",
+    })
 
-  use({
+    vim.api.nvim_create_autocmd("BufReadPost", {
+      pattern = "*",
+      callback = function()
+        require("colorizer").attach_to_buffer(0)
+      end,
+    })
+  end,
+})
+
+
+  
+    use({
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     config = function()
