@@ -1,10 +1,8 @@
 -- ========================================================
--- CORE.LSP.LUA - LSP & Completion Setup
+-- CORE.LSP.LUA - Native LSP & Completion Setup
 -- ========================================================
 
--- -----------------------------
 -- Completion (nvim-cmp + LuaSnip)
--- -----------------------------
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
@@ -32,23 +30,21 @@ cmp.setup({
   },
 })
 
--- -----------------------------
 -- Diagnostics
--- -----------------------------
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
   update_in_insert = true,
 })
 
--- -----------------------------
 -- Mason Setup
--- -----------------------------
+require("mason").setup()
+
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
     "pyright",
-    "typescript-language-server", -- ✅ Correct
+    "ts_ls", -- ✅ updated from tsserver
     "bashls",
     "jsonls",
     "html",
@@ -56,9 +52,7 @@ require("mason-lspconfig").setup({
   },
 })
 
--- -----------------------------
--- LSP Configuration
--- -----------------------------
+-- Shared LSP Config
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local on_attach = function(_, bufnr)
@@ -74,10 +68,7 @@ local on_attach = function(_, bufnr)
   map("n", "]d", vim.diagnostic.goto_next, opts)
 end
 
--- -----------------------------
--- Server Setup
--- -----------------------------
-local lspconfig = vim.lsp
+-- Server Configurations
 local servers = {
   lua_ls = {
     settings = {
@@ -89,16 +80,19 @@ local servers = {
     },
   },
   pyright = {},
-  tsserver = {},
+  ts_ls = {},
   bashls = {},
   jsonls = {},
   html = {},
   cssls = {},
 }
 
+-- Register and Enable Servers
 for server, config in pairs(servers) do
-  lspconfig.config(server, vim.tbl_deep_extend("force", {
+  vim.lsp.config(server, vim.tbl_deep_extend("force", {
     on_attach = on_attach,
     capabilities = capabilities,
   }, config))
+  vim.lsp.enable({ server })
 end
+
