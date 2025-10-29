@@ -37,9 +37,9 @@ require("core.plugins") -- Packer setup & plugin installation
 -- -----------------------------
 -- 4. Core Settings
 -- -----------------------------
-require("core.options")   -- Vim options
-require("core.keymaps")   -- Leader keys & general keymaps
-require("core.autocmds")  -- Autocommands (e.g., Python autoformat)
+require("core.options")
+require("core.keymaps")
+require("core.autocmds")
 
 -- -----------------------------
 -- 5. Plugin Configurations
@@ -56,9 +56,10 @@ require("plugins.ibl")
 -- -----------------------------
 -- 6. LSP & Autocompletion
 -- -----------------------------
-require("vim.lsp") -- Mason, LSP servers, cmp
+require("core.lsp") -- Corrected path to your lsp.lua
 
 -- -----------------------------
 -- 7. Colorscheme
 -- -----------------------------
 vim.cmd("colorscheme nord")
+
