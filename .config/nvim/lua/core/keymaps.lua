@@ -123,3 +123,40 @@ map("n", "<leader>wh", "<C-w>h", opts)
 map("n", "<leader>wj", "<C-w>j", opts)
 map("n", "<leader>wk", "<C-w>k", opts)
 map("n", "<leader>wl", "<C-w>l", opts)
+
+-- Vimwiki
+vim.keymap.set("n", "<leader>ww", "<cmd>VimwikiIndex<CR>", { desc = "Open Vimwiki index" })
+vim.keymap.set("n", "<leader>wd", "<cmd>VimwikiMakeDiaryNote<CR>", { desc = "Create today's diary note" })
+vim.keymap.set("n", "<leader>wi", "<cmd>VimwikiDiaryIndex<CR>", { desc = "Open diary index" })
+vim.keymap.set("n", "<leader>ws", "<cmd>VimwikiSearch<CR>", { desc = "Search Vimwiki" })
+
+-- Vimwiki Telescope
+vim.keymap.set("n", "<leader>wf", function()
+  require("telescope.builtin").find_files({ cwd = "~/vimwiki" })
+end, { desc = "Find Vimwiki files" })
+
+-- Search Cheatsheets
+vim.keymap.set("n", "<leader>cs", function()
+  require("telescope.builtin").find_files({
+    prompt_title = "Cheatsheets",
+    cwd = "~/projects/cheatsheets",
+  })
+end, { desc = "Open Cheatsheets" })
+
+-- Search Notebook
+vim.keymap.set("n", "<leader>ns", function()
+  require("telescope.builtin").find_files({
+    prompt_title = "Notes",
+    cwd = "~/Notebook",
+  })
+end, { desc = "Open Notes" })
+
+
+
+
+
+
+
+
+
+
