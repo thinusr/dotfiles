@@ -88,19 +88,12 @@ return require("packer").startup(function(use)
   -- Miscellaneous
   use("windwp/nvim-autopairs")
 
-  -- ✅ Vimwiki (now inside the startup block)
+  -- dashboard
   use({
-    "vimwiki/vimwiki",
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = "~/vimwiki",
-          syntax = "markdown",
-          ext = ".md"
-        }
-      }
-      vim.g.vimwiki_global_ext = 0
-    end,
-  })
+  'goolord/alpha-nvim',
+  requires = { 'nvim-tree/nvim-web-devicons' },
+})
+
+
 end)
 
