@@ -52,6 +52,7 @@ require("plugins.gitsigns")
 require("plugins.dap")
 require("plugins.autopairs")
 require("plugins.ibl")
+require("plugins.alpha")
 
 -- -----------------------------
 -- 6. LSP & Autocompletion
