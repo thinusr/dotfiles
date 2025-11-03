@@ -9,9 +9,13 @@ if (( LOGO_COUNT > 0 )); then
   cp -f "$RANDOM_LOGO" "$HOME/.config/alsi/alsi.logo"
 fi
 
-alsi --red
+#alsi --red
+fastfetch
 
 setopt CORRECT_ALL
+
+# ----- Set default editor to nvim -----
+export EDITOR=nvim
 
 
 # ----- Powerlevel10k Instant Prompt -----
