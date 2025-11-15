@@ -151,6 +151,10 @@ vim.keymap.set("n", "<leader>ns", function()
   })
 end, { desc = "Open Notes" })
 
+-- Return Home
+vim.keymap.set("n", "<leader>h", ":Alpha<CR>")
+
+
 
 
 
