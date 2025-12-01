@@ -1,3 +1,16 @@
+# ==========================================
+#  .zshrc — Table of Contents
+# ==========================================
+#  1. Appearance & Startup Logo
+#  2. Zsh Options
+#  3. Editor & Terminal
+#  4. Prompt (Powerlevel10k)
+#  5. Oh My Zsh Setup
+#  6. Plugin Configuration
+#  7. Aliases
+#  8. Environment Variables
+# ==========================================
+
 # ===========================
 #  Appearance & Startup Logo
 # ===========================
