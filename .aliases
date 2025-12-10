@@ -1,5 +1,4 @@
-#=====================
-# General / Convenience
+#===================== General / Convenience
 # =====================
 alias x='exit'
 alias c='clear'
@@ -137,4 +136,27 @@ alias dell100='ddcutil --display 1 setvcp 10 100 && notify-send "Dell Brightness
 # View Alias List
 # =====================
 alias alias-list='bat --language=bash ~/.aliases'
+
+# =====================
+# EPSON SCANNER
+# =====================
+
+# Flatbed scan to PDF
+alias scanflat='
+mkdir -p ~/Scans
+FILE=~/Scans/flatbed-$(date +%F_%H-%M-%S).pdf
+scanimage -d "airscan:e0:EPSON L6270 Series" --source Flatbed --resolution 300 --format=png | img2pdf -o "$FILE" && okular "$FILE" &
+'
+
+# ADF scan to PDF
+alias scanadf='
+mkdir -p ~/Scans
+FILE=~/Scans/adf-$(date +%F_%H-%M-%S).pdf
+scanimage -d "airscan:e0:EPSON L6270 Series" --source ADF --resolution 300 --format=png | img2pdf -o "$FILE" && okular "$FILE" &
+'
+
+# Raw flatbed PNG test (no PDF)
+alias scanpng='
+scanimage -d "airscan:e0:EPSON L6270 Series" --source Flatbed --resolution 300 --format=png > ~/Scans/test.png
+'
 
