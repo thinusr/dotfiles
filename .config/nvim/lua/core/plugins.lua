@@ -16,7 +16,17 @@ return require("packer").startup(function(use)
   use("williamboman/mason-lspconfig.nvim")
 
   -- Treesitter
-  use("nvim-treesitter/nvim-treesitter")
+use({
+  "nvim-treesitter/nvim-treesitter",
+  branch = "master",   -- lock to legacy branch
+  run = ":TSUpdate",
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      highlight = { enable = true },
+      indent    = { enable = true },
+    })
+  end,
+})
 
   -- Telescope
   use("nvim-lua/plenary.nvim")

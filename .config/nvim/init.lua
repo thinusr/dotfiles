@@ -5,12 +5,12 @@
 -- -----------------------------
 -- 0. LuaRocks Path Setup
 -- -----------------------------
-local home = os.getenv("HOME")
-package.path = package.path .. ";" .. home .. "/.luarocks/share/lua/5.1/?.lua;" .. home .. "/.luarocks/share/lua/5.1/?/init.lua"
-package.cpath = package.cpath .. ";" .. home .. "/.luarocks/lib/lua/5.1/?.so"
+--local home = os.getenv("HOME")
+--package.path = package.path .. ";" .. home .. "/.luarocks/share/lua/5.1/?.lua;" .. home .. "/.luarocks/share/lua/5.1/?/init.lua"
+--package.cpath = package.cpath .. ";" .. home .. "/.luarocks/lib/lua/5.1/?.so"
 
 -- Optional: preload jsregexp to silence LuaSnip health warning
-pcall(require, "jsregexp")
+--pcall(require, "jsregexp")
 
 -- -----------------------------
 -- 1. Bootstrap Packer
@@ -46,7 +46,7 @@ require("core.autocmds")
 -- -----------------------------
 require("plugins.neotree")
 require("plugins.telescope")
-require("plugins.treesitter")
+--require("plugins.treesitter")
 require("plugins.lualine")
 require("plugins.gitsigns")
 require("plugins.dap")
