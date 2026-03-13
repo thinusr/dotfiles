@@ -87,3 +87,11 @@ export PATH="$HOME/polybar/build/bin:$PATH"
 export PATH="$PATH:/home/thinus/.local/bin"   # pipx addition
 export PYTHONPATH="$HOME/python-lib:$PYTHONPATH"
 
+
+# pnpm
+export PNPM_HOME="/home/thinus/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

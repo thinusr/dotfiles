@@ -64,3 +64,5 @@ require("core.lsp") -- Corrected path to your lsp.lua
 -- -----------------------------
 vim.cmd("colorscheme nord")
 
+vim.g.loaded_node_provider = 0
+
