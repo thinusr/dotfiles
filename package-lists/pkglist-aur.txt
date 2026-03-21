@@ -1,0 +1,15 @@
+alsi 0.4.9-1
+bibata-cursor-theme 2.0.7-1
+blueberry 1.4.8-2
+brave-bin 1:1.88.134-1
+gnome-bluetooth 3.34.5+r16+g61cfff1c-3
+gnome-bluetooth-debug 3.34.5+r16+g61cfff1c-3
+gtk2 2.24.33-5
+gtk2-debug 2.24.33-5
+gtkmm 1:2.24.5-5
+gtkmm-debug 1:2.24.5-5
+nitrogen 1.6.1-6
+nitrogen-debug 1.6.1-6
+nordic-darker-theme 2.2.0-1
+yay 12.5.7-1
+yay-debug 12.5.7-1
