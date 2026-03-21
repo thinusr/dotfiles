@@ -61,6 +61,7 @@ plugins=(
   web-search
   history-substring-search
   fzf
+  zsh-autocomplete
 )
 source $ZSH/oh-my-zsh.sh
 
