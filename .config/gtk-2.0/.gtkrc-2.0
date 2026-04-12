@@ -1,4 +1,5 @@
-gtk-theme-name="Nordic-darker"
-gtk-icon-theme-name="Nordic"
+gtk-theme-name="Nordic-darker-v40"
+gtk-icon-theme-name="Papirus-Dark"
 gtk-font-name="YourFont 10"
-
+gtk-cursor-theme-name="nordic_cursors_scalable"
+gtk-cursor-theme-size="24"

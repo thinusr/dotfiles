@@ -160,3 +160,7 @@ alias scanpng='
 scanimage -d "airscan:e0:EPSON L6270 Series" --source Flatbed --resolution 300 --format=png > ~/Scans/test.png
 '
 
+# =====================
+# CALCURSE
+# =====================
+alias calcurse='calcurse -D ~/Dropbox/calcurse'

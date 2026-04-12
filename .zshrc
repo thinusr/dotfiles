@@ -24,8 +24,8 @@ if (( LOGO_COUNT > 0 )); then
   cp -f "$RANDOM_LOGO" "$HOME/.config/alsi/alsi.logo"
 fi
 
-alsi --red
-#fastfetch
+#alsi --red
+fastfetch
 
 # ===========================
 #  Zsh Options
@@ -61,7 +61,7 @@ plugins=(
   web-search
   history-substring-search
   fzf
-  zsh-autocomplete
+ # zsh-autocomplete
 )
 source $ZSH/oh-my-zsh.sh
 
